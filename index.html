@@ -2,59 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Andrei-Gabriel Dinu | Portfolio</title>
   <style>
-    :root { --fg:#111; --muted:#444; --line:#e8e8e8; --card:#fff; }
-    * { box-sizing: border-box; }
-    body { font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif; background:#fff; color:var(--fg); margin:0; }
-    a { color: var(--fg); text-decoration: none; }
-
-    header { text-align:center; padding:64px 20px 36px; border-bottom:1px solid var(--line); }
-    header h1 { font-size:2.25rem; margin:0 0 6px; letter-spacing:.2px; }
-    header p.lead { margin:6px 0 0; color:var(--muted); font-size:1.05rem; }
-    header .about { margin:18px auto 0; color:#2a2a2a; font-size:0.98rem; max-width:860px; line-height:1.65; }
-
-    section { max-width: 1000px; margin:0 auto; padding:44px 20px; border-bottom:1px solid var(--line); }
-    h2 { font-size:1.45rem; margin:0 0 26px; padding-left:10px; border-left:4px solid #999; }
-
-    .projects { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:22px; }
-    .card {
-      background:var(--card); border:1px solid #ddd; border-radius:14px; padding:16px;
-      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-    }
-    .card:hover { transform: translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,.06); border-color:#d5d5d5; }
-    .thumb {
-      width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid #ddd; background:#f7f7f7; display:block;
-      margin-bottom:10px;
-    }
-    .card h3 { margin:8px 0 8px; font-size:1.12rem; letter-spacing:.2px; }
-    .card p { margin:0; color:var(--muted); font-size:.95rem; line-height:1.55; }
-
-    .links { display:flex; flex-wrap:wrap; gap:10px 12px; margin-top:12px; }
-    .btn {
-      display:inline-block; padding:8px 12px; font-size:.9rem; border:1px solid #bbb; border-radius:10px;
-      transition: background .15s ease, border-color .15s ease, transform .1s ease;
-    }
-    .btn:hover { border-color:#000; background:#f6f6f6; transform: translateY(-1px); }
-    .btn--ghost { border-style:dashed; }
-    .meta { color:#777; font-size:.9rem; margin-top:6px; }
-
-    #contact p { margin:8px 0; }
-    #contact a { border-bottom:1px solid #ccc; }
-    #contact a:hover { border-bottom-color:#000; }
-
-    footer { text-align:center; padding:34px 10px; color:#666; font-size:.9rem; }
-    footer a { border-bottom:1px solid #ccc; }
-    footer a:hover { border-bottom-color:#111; }
+    body { font-family: 'Segoe UI', sans-serif; background-color: #fff; color: #111; margin: 0; padding: 0; line-height: 1.6; }
+    header { text-align: center; padding: 60px 20px 40px; border-bottom: 1px solid #ddd; }
+    header h1 { font-size: 2.2rem; letter-spacing: 1px; margin-bottom: 8px; }
+    header p { font-size: 1.1rem; color: #444; }
+    section { max-width: 950px; margin: 0 auto; padding: 50px 20px; border-bottom: 1px solid #eee; }
+    h2 { font-size: 1.5rem; border-left: 4px solid #999; padding-left: 10px; margin-bottom: 30px; }
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .card { border: 1px solid #ddd; border-radius: 12px; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; background: #fafafa; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+    .card img { width: 100%; height: 180px; object-fit: cover; border-bottom: 1px solid #ddd; transition: opacity 0.3s ease; }
+    .card:hover img { opacity: 0.9; }
+    .card-content { padding: 20px; }
+    .card-content h3 { margin-top: 0; font-size: 1.2rem; }
+    .card-content p { color: #444; font-size: 0.95rem; }
+    .links a { display: inline-block; margin-right: 12px; margin-top: 10px; font-size: 0.9rem; color: #111; text-decoration: none; border-bottom: 1px solid #aaa; }
+    .links a:hover { color: #000; border-bottom: 1px solid #000; }
+    footer { text-align: center; padding: 40px 10px; color: #555; font-size: 0.9rem; }
+    footer a { color: #111; text-decoration: none; border-bottom: 1px solid #ccc; }
+    footer a:hover { border-bottom: 1px solid #111; }
   </style>
 </head>
 <body>
   <header>
     <h1>Andrei-Gabriel Dinu</h1>
-    <p class="lead">Junior Web Developer — JavaScript · Node.js · React (in progress)</p>
-    <p class="about">Building clean, scalable web applications from the ground up. Former entrepreneur (A-Frame construction & events),
-      now focused on full-stack development with a strong foundation in testing and structured delivery.</p>
+    <p>Junior Web Developer | JavaScript • Node.js • React</p>
   </header>
 
   <section id="projects">
@@ -62,69 +37,75 @@
     <div class="projects">
 
       <div class="card">
-        <img class="thumb" src="img/eventflow-thumb.svg" alt="EventFlow app preview">
-        <h3>EventFlow</h3>
-        <p>Event planner (Node.js, Express, EJS, Bootstrap). RESTful routes, form validation, Mongo-ready data layer.</p>
-        <div class="links">
-          <a class="btn" href="https://github.com/AndreiGabriel1/EventFlow" target="_blank" rel="noopener noreferrer">View Code</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        <img src="img/eventflow-thumb.jpg" alt="EventFlow Thumbnail">
+        <div class="card-content">
+          <h3>EventFlow</h3>
+          <p>Event planning app using Node.js, Express, EJS, and Bootstrap – includes RESTful routes and form validation.</p>
+          <div class="links">
+            <a href="https://github.com/AndreiGabriel1/EventFlow" target="_blank">GitHub</a>
+            <a href="#">Demo / Video</a>
+          </div>
         </div>
-        <div class="meta">Focus: routing, server-rendered views, clean UX</div>
       </div>
 
       <div class="card">
-        <img class="thumb" src="img/buildtrack-thumb.svg" alt="BuildTrack dashboard preview">
-        <h3>BuildTrack</h3>
-        <p>Internal dashboard for inventory & crews (Node.js, Express, EJS). CRUD + low-stock hints + summary report.</p>
-        <div class="links">
-          <a class="btn" href="https://github.com/AndreiGabriel1/BuildTrack" target="_blank" rel="noopener noreferrer">View Code</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer">Live Demo / Video</a>
+        <img src="img/buildtrack-thumb.jpg" alt="BuildTrack Thumbnail">
+        <div class="card-content">
+          <h3>BuildTrack</h3>
+          <p>Internal dashboard for tracking construction projects and operations using Node.js and Express.</p>
+          <div class="links">
+            <a href="https://github.com/AndreiGabriel1/BuildTrack" target="_blank">GitHub</a>
+            <a href="#">Demo / Video</a>
+          </div>
         </div>
-        <div class="meta">Focus: practical dashboard, data flows, polish</div>
       </div>
 
       <div class="card">
-        <img class="thumb" src="img/aframehub-thumb.svg" alt="AFrameHub gallery preview">
-        <h3>AFrameHub</h3>
-        <p>Showcase website for A-Frame models (Node.js, Express, EJS). Clean presentation, gallery & reviews (mock).</p>
-        <div class="links">
-          <a class="btn" href="https://github.com/AndreiGabriel1/AFrameHub" target="_blank" rel="noopener noreferrer">View Code</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer">Live Demo / Video</a>
+        <img src="img/aframehub-thumb.jpg" alt="AFrameHub Thumbnail">
+        <div class="card-content">
+          <h3>A-FrameHub</h3>
+          <p>Full-stack project built with Node.js, Express, and MongoDB for managing A-frame house construction workflows.</p>
+          <div class="links">
+            <a href="https://github.com/AndreiGabriel1/AFrameHub" target="_blank">GitHub</a>
+            <a href="#">Demo / Video</a>
+          </div>
         </div>
-        <div class="meta">Focus: dynamic content, layout, accessibility</div>
       </div>
 
       <div class="card">
-        <img class="thumb" src="img/jobpilot-thumb.svg" alt="JobPilot app preview">
-        <h3>JobPilot</h3>
-        <p>Job application tracker — Express backend, planned React client. API design, validation, filters & pagination.</p>
-        <div class="links">
-          <a class="btn" href="https://github.com/AndreiGabriel1/JobPilot" target="_blank" rel="noopener noreferrer">View Code</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer">Live Demo / Video</a>
+        <img src="img/jobpilot-thumb.jpg" alt="JobPilot Thumbnail">
+        <div class="card-content">
+          <h3>JobPilot</h3>
+          <p>Job tracking and management platform, built with Express backend and planned React client integration.</p>
+          <div class="links">
+            <a href="https://github.com/AndreiGabriel1/JobPilot" target="_blank">GitHub</a>
+            <a href="#">Demo / Video</a>
+          </div>
         </div>
-        <div class="meta">Focus: external data, search, real-world flows</div>
       </div>
 
       <div class="card">
-        <img class="thumb" src="img/algorithm-thumb.svg" alt="Algorithm Visualizer preview">
-        <h3>Algorithm Visualizer</h3>
-        <p>Canvas-based visualization of sorting logic (Bubble now; Merge/Quick on roadmap). Speed slider + step/play.</p>
-        <div class="links">
-          <a class="btn" href="https://github.com/AndreiGabriel1/AlgorithmVisualizer" target="_blank" rel="noopener noreferrer">View Code</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer">Live Demo / Video</a>
+        <img src="img/qa-thumb.jpg" alt="QA Manual Testing Thumbnail">
+        <div class="card-content">
+          <h3>QA Project (Manual Testing)</h3>
+          <p>Portfolio project developed during QA training, showcasing structured test cases, reports, and scenario design.</p>
+          <div class="links">
+            <a href="https://github.com/AndreiGabriel1/manual_testing_portofolio" target="_blank">GitHub</a>
+            <a href="#">Demo / Report</a>
+          </div>
         </div>
-        <div class="meta">Focus: CS fundamentals, problem-solving</div>
       </div>
 
       <div class="card">
-        <img class="thumb" src="img/qa-thumb.svg" alt="Manual QA portfolio preview">
-        <h3>Manual QA Portfolio <span style="font-weight:400;">(background)</span></h3>
-        <p>Final project from Manual QA training — test design, Jira/Zephyr workflows, API checks in Postman, SQL basics.</p>
-        <div class="links">
-          <a class="btn" href="https://github.com/AndreiGabriel1/itf_manual_testing_final_project_example_and_portofolio" target="_blank" rel="noopener noreferrer">View Repo</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer">Case Study / Report</a>
+        <img src="img/algorithm-thumb.jpg" alt="Algorithm Visualizer Thumbnail">
+        <div class="card-content">
+          <h3>Algorithm Visualizer</h3>
+          <p>Interactive web app that visually demonstrates core JavaScript algorithms and logic structures.</p>
+          <div class="links">
+            <a href="https://github.com/AndreiGabriel1/AlgorithmVisualizer" target="_blank">GitHub</a>
+            <a href="#">Demo / Video</a>
+          </div>
         </div>
-        <div class="meta">Foundation for transition into development</div>
       </div>
 
     </div>
@@ -133,8 +114,8 @@
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:andrei.dinu.dev@gmail.com">andrei.dinu.dev@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/andrei-gabriel-dinu-173240251/" target="_blank" rel="noopener noreferrer">linkedin.com/in/andrei-gabriel-dinu-173240251</a></p>
-    <p>GitHub: <a href="https://github.com/AndreiGabriel1" target="_blank" rel="noopener noreferrer">github.com/AndreiGabriel1</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/andrei-gabriel-dinu-173240251/" target="_blank">linkedin.com/in/andrei-gabriel-dinu</a></p>
+    <p>GitHub: <a href="https://github.com/AndreiGabriel1" target="_blank">github.com/AndreiGabriel1</a></p>
   </section>
 
   <footer>
