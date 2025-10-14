@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Andrei-Gabriel Dinu | Portfolio</title>
   <style>
-    :root {
-      --fg:#111; --muted:#444; --line:#e8e8e8; --card:#fff; --accent:#0d0d0d;
-    }
+    :root { --fg:#111; --muted:#444; --line:#e8e8e8; --card:#fff; }
     * { box-sizing: border-box; }
     body { font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif; background:#fff; color:var(--fg); margin:0; }
     a { color: var(--fg); text-decoration: none; }
+
     header { text-align:center; padding:64px 20px 36px; border-bottom:1px solid var(--line); }
     header h1 { font-size:2.25rem; margin:0 0 6px; letter-spacing:.2px; }
     header p.lead { margin:6px 0 0; color:var(--muted); font-size:1.05rem; }
@@ -21,11 +20,14 @@
 
     .projects { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:22px; }
     .card {
-      background:var(--card); border:1px solid #ddd; border-radius:14px; padding:18px 18px 16px;
+      background:var(--card); border:1px solid #ddd; border-radius:14px; padding:16px;
       transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
     }
     .card:hover { transform: translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,.06); border-color:#d5d5d5; }
-    .card h3 { margin:4px 0 8px; font-size:1.12rem; letter-spacing:.2px; }
+    .thumb {
+      width:100%; height:160px; object-fit:cover; border-radius:10px; border:1px solid #ddd; background:#f7f7f7; display:block;
+    }
+    .card h3 { margin:12px 0 8px; font-size:1.12rem; letter-spacing:.2px; }
     .card p { margin:0; color:var(--muted); font-size:.95rem; line-height:1.55; }
 
     .links { display:flex; flex-wrap:wrap; gap:10px 12px; margin-top:12px; }
@@ -35,7 +37,6 @@
     }
     .btn:hover { border-color:#000; background:#f6f6f6; transform: translateY(-1px); }
     .btn--ghost { border-style:dashed; }
-
     .meta { color:#777; font-size:.9rem; margin-top:6px; }
 
     #contact p { margin:8px 0; }
@@ -60,61 +61,67 @@
     <div class="projects">
 
       <div class="card">
+        <img class="thumb" src="img/eventflow-thumb.jpg" alt="EventFlow app preview">
         <h3>EventFlow</h3>
         <p>Event planner (Node.js, Express, EJS, Bootstrap). RESTful routes, form validation, Mongo-ready data layer.</p>
         <div class="links">
-          <a class="btn" href="https://github.com/AndreiGabriel1/EventFlow" target="_blank" rel="noopener noreferrer" aria-label="View EventFlow code on GitHub">View Code</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer" aria-label="Open EventFlow live demo">Live Demo</a>
+          <a class="btn" href="https://github.com/AndreiGabriel1/EventFlow" target="_blank" rel="noopener noreferrer">View Code</a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
         </div>
         <div class="meta">Focus: routing, server-rendered views, clean UX</div>
       </div>
 
       <div class="card">
+        <img class="thumb" src="img/buildtrack-thumb.jpg" alt="BuildTrack dashboard preview">
         <h3>BuildTrack</h3>
         <p>Internal dashboard for inventory & crews (Node.js, Express, EJS). CRUD + low-stock hints + summary report.</p>
         <div class="links">
-          <a class="btn" href="https://github.com/AndreiGabriel1/BuildTrack" target="_blank" rel="noopener noreferrer" aria-label="View BuildTrack code on GitHub">View Code</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer" aria-label="Open BuildTrack demo or video">Live Demo / Video</a>
+          <a class="btn" href="https://github.com/AndreiGabriel1/BuildTrack" target="_blank" rel="noopener noreferrer">View Code</a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer">Live Demo / Video</a>
         </div>
         <div class="meta">Focus: practical dashboard, data flows, polish</div>
       </div>
 
       <div class="card">
+        <img class="thumb" src="img/aframehub-thumb.jpg" alt="AFrameHub gallery preview">
         <h3>AFrameHub</h3>
         <p>Showcase website for A-Frame models (Node.js, Express, EJS). Clean presentation, gallery & reviews (mock).</p>
         <div class="links">
-          <a class="btn" href="https://github.com/AndreiGabriel1/AFrameHub" target="_blank" rel="noopener noreferrer" aria-label="View AFrameHub code on GitHub">View Code</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer" aria-label="Open AFrameHub demo or video">Live Demo / Video</a>
+          <a class="btn" href="https://github.com/AndreiGabriel1/AFrameHub" target="_blank" rel="noopener noreferrer">View Code</a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer">Live Demo / Video</a>
         </div>
         <div class="meta">Focus: dynamic content, layout, accessibility</div>
       </div>
 
       <div class="card">
+        <img class="thumb" src="img/jobpilot-thumb.jpg" alt="JobPilot app preview">
         <h3>JobPilot</h3>
         <p>Job application tracker — Express backend, planned React client. API design, validation, filters & pagination.</p>
         <div class="links">
-          <a class="btn" href="https://github.com/AndreiGabriel1/JobPilot" target="_blank" rel="noopener noreferrer" aria-label="View JobPilot code on GitHub">View Code</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer" aria-label="Open JobPilot demo or video">Live Demo / Video</a>
+          <a class="btn" href="https://github.com/AndreiGabriel1/JobPilot" target="_blank" rel="noopener noreferrer">View Code</a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer">Live Demo / Video</a>
         </div>
         <div class="meta">Focus: external data, search, real-world flows</div>
       </div>
 
       <div class="card">
+        <img class="thumb" src="img/algorithm-thumb.jpg" alt="Algorithm Visualizer preview">
         <h3>Algorithm Visualizer</h3>
         <p>Canvas-based visualization of sorting logic (Bubble now; Merge/Quick on roadmap). Speed slider + step/play.</p>
         <div class="links">
-          <a class="btn" href="https://github.com/AndreiGabriel1/AlgorithmVisualizer" target="_blank" rel="noopener noreferrer" aria-label="View Algorithm Visualizer code on GitHub">View Code</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer" aria-label="Open Algorithm Visualizer demo or video">Live Demo / Video</a>
+          <a class="btn" href="https://github.com/AndreiGabriel1/AlgorithmVisualizer" target="_blank" rel="noopener noreferrer">View Code</a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer">Live Demo / Video</a>
         </div>
         <div class="meta">Focus: CS fundamentals, problem-solving</div>
       </div>
 
       <div class="card">
+        <img class="thumb" src="img/qa-thumb.jpg" alt="Manual QA portfolio preview">
         <h3>Manual QA Portfolio <span style="font-weight:400;">(background)</span></h3>
         <p>Final project from Manual QA training — test design, Jira/Zephyr workflows, API checks in Postman, SQL basics.</p>
         <div class="links">
-          <a class="btn" href="https://github.com/AndreiGabriel1/itf_manual_testing_final_project_example_and_portofolio" target="_blank" rel="noopener noreferrer" aria-label="View QA Portfolio on GitHub">View Repo</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer" aria-label="Open QA case study or report">Case Study / Report</a>
+          <a class="btn" href="https://github.com/AndreiGabriel1/itf_manual_testing_final_project_example_and_portofolio" target="_blank" rel="noopener noreferrer">View Repo</a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer">Case Study / Report</a>
         </div>
         <div class="meta">Foundation for transition into development</div>
       </div>
