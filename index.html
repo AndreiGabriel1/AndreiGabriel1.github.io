@@ -4,139 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Andrei-Gabriel Dinu | Portfolio</title>
-
   <style>
-    :root {
-      --container: 980px;
-      --radius: 12px;
-      --shadow: 0 2px 10px rgba(0,0,0,.08);
-      --border: 1px solid #ddd;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      color: #111;
-      background: #fff;
-      line-height: 1.6;
-      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px 40px;
-      border-bottom: var(--border);
-    }
-
-    header h1 {
-      margin: 0 0 8px;
-      font-size: 2.2rem;
-      letter-spacing: 0.5px;
-    }
-
-    header p {
-      margin: 0;
-      color: #444;
-      font-size: 1.05rem;
-    }
-
-    section {
-      max-width: var(--container);
-      margin: 0 auto;
-      padding: 46px 20px;
-      border-bottom: 1px solid #eee;
-    }
-
-    h2 {
-      margin: 0 0 26px;
-      font-size: 1.5rem;
-      padding-left: 10px;
-      border-left: 4px solid #999;
-    }
-
-    .projects {
-      display: grid;
-      gap: 26px;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .card {
-      background: #fafafa;
-      border: var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      box-shadow: 0 2px 4px rgba(0,0,0,.04);
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      object-position: center 40%;
-      display: block;
-      border-bottom: 1px solid #ddd;
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      background: #f3f3f3;
-    }
-
-    .card:hover img {
-      opacity: 0.96;
-      transform: scale(1.02);
-    }
-
-    .card-content {
-      padding: 18px 20px 22px;
-    }
-
-    .card-content h3 {
-      margin-top: 0;
-      font-size: 1.16rem;
-    }
-
-    .card-content p {
-      margin: 0;
-      color: #444;
-      font-size: 0.95rem;
-    }
-
-    .links {
-      margin-top: 10px;
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .links a {
-      color: #111;
-      text-decoration: none;
-      font-size: 0.9rem;
-      border-bottom: 1px solid #aaa;
-      padding-bottom: 1px;
-    }
-
-    .links a:hover {
-      border-bottom: 1px solid #000;
-    }
-
-    #contact p {
-      margin: 0.25rem 0;
-    }
-
-    @media (max-width: 380px) {
-      .card img { height: 190px; object-position: center 35%; }
-    }
+    :root{--container:980px;--radius:12px;--border:1px solid #ddd}
+    *{box-sizing:border-box}
+    body{margin:0;color:#111;background:#fff;line-height:1.6;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif}
+    header{text-align:center;padding:60px 20px 40px;border-bottom:var(--border)}
+    header h1{margin:0 0 8px;font-size:2.2rem;letter-spacing:.5px}
+    header p{margin:0;color:#444;font-size:1.05rem}
+    section{max-width:var(--container);margin:0 auto;padding:46px 20px;border-bottom:1px solid #eee}
+    h2{margin:0 0 26px;font-size:1.5rem;padding-left:10px;border-left:4px solid #999}
+    .projects{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .card{background:#fafafa;border:var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;box-shadow:0 2px 4px rgba(0,0,0,.04)}
+    .card:hover{transform:translateY(-4px);box-shadow:0 2px 10px rgba(0,0,0,.08)}
+    .thumb{width:100%;height:220px;object-fit:cover;object-position:center 45%;display:block;border-bottom:1px solid #ddd;border-top-left-radius:12px;border-top-right-radius:12px;background:#f3f3f3;transition:opacity .3s ease,transform .3s ease}
+    .card:hover .thumb{opacity:.96;transform:scale(1.02)}
+    /* Ajustări individuale (mutăm „fereastra” ca să nu pară tăiate) */
+    .thumb.eventflow{object-position:center 30%;}
+    .thumb.jobpilot{object-position:center 40%;}
+    .thumb.algorithm{object-position:center 55%;}
+    .card-content{padding:18px 20px 22px}
+    .card-content h3{margin:0 0 6px;font-size:1.16rem}
+    .card-content p{margin:0;color:#444;font-size:.95rem}
+    .links{margin-top:10px;display:flex;gap:14px;flex-wrap:wrap}
+    .links a{color:#111;text-decoration:none;font-size:.9rem;border-bottom:1px solid #aaa;padding-bottom:1px}
+    .links a:hover{border-bottom:1px solid #000}
+    #contact p{margin:.25rem 0}
+    @media (max-width:380px){.thumb{height:190px;object-position:center 38%}}
   </style>
 </head>
-
 <body>
   <header>
     <h1>Andrei-Gabriel Dinu</h1>
@@ -148,7 +43,7 @@
     <div class="projects">
 
       <div class="card">
-        <img src="img/eventflow-thumb.jpg" alt="EventFlow Thumbnail" style="object-position: center 35%; transform: scale(0.97);">
+        <img class="thumb eventflow" src="img/eventflow-thumb.jpg" alt="EventFlow Thumbnail">
         <div class="card-content">
           <h3>EventFlow</h3>
           <p>Event planning app using Node.js, Express, EJS, and Bootstrap – includes RESTful routes and form validation.</p>
@@ -160,7 +55,8 @@
       </div>
 
       <div class="card">
-        <img src="img/buildtrack-thumb.jpg" alt="BuildTrack Thumbnail">
+        <!-- cache-buster pentru a forța refreshul imaginii -->
+        <img class="thumb" src="img/buildtrack-thumb.jpg?v=2" alt="BuildTrack Thumbnail">
         <div class="card-content">
           <h3>BuildTrack</h3>
           <p>Internal dashboard for tracking construction projects and operations using Node.js and Express.</p>
@@ -172,7 +68,7 @@
       </div>
 
       <div class="card">
-        <img src="img/aframehub-thumb.jpg" alt="AFrameHub Thumbnail">
+        <img class="thumb" src="img/aframehub-thumb.jpg" alt="AFrameHub Thumbnail">
         <div class="card-content">
           <h3>A-FrameHub</h3>
           <p>Full-stack project built with Node.js, Express, and MongoDB for managing A-frame house construction workflows.</p>
@@ -184,7 +80,7 @@
       </div>
 
       <div class="card">
-        <img src="img/jobpilot-thumb.jpg" alt="JobPilot Thumbnail" style="object-position: center 35%; transform: scale(0.97);">
+        <img class="thumb jobpilot" src="img/jobpilot-thumb.jpg" alt="JobPilot Thumbnail">
         <div class="card-content">
           <h3>JobPilot</h3>
           <p>Job tracking and management platform, built with Express backend and planned React client integration.</p>
@@ -196,7 +92,7 @@
       </div>
 
       <div class="card">
-        <img src="img/qa-thumb.jpg" alt="QA Manual Testing Thumbnail">
+        <img class="thumb" src="img/qa-thumb.jpg" alt="QA Manual Testing Thumbnail">
         <div class="card-content">
           <h3>QA Project (Manual Testing)</h3>
           <p>Portfolio project developed during QA training, showcasing structured test cases, reports, and scenario design.</p>
@@ -208,7 +104,7 @@
       </div>
 
       <div class="card">
-        <img src="img/algorithm-thumb.jpg" alt="Algorithm Visualizer Thumbnail" style="object-position: center 38%; transform: scale(0.97);">
+        <img class="thumb algorithm" src="img/algorithm-thumb.jpg" alt="Algorithm Visualizer Thumbnail">
         <div class="card-content">
           <h3>Algorithm Visualizer</h3>
           <p>Interactive web app that visually demonstrates core JavaScript algorithms and logic structures.</p>
