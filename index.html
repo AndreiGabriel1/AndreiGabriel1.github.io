@@ -2,56 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Andrei-Gabriel Dinu | Portfolio</title>
   <style>
-.card {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #fafafa;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+    :root{
+      --container: 980px;
+      --radius: 12px;
+      --shadow: 0 2px 10px rgba(0,0,0,.08);
+      --border: 1px solid #ddd;
+    }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
+    /* Base */
+    *{box-sizing:border-box}
+    body{
+      margin:0; color:#111; background:#fff; line-height:1.6;
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    }
+    header{
+      text-align:center; padding:60px 20px 40px; border-bottom:var(--border);
+    }
+    header h1{margin:0 0 8px; font-size:2.2rem; letter-spacing:.5px}
+    header p{margin:0; color:#444; font-size:1.05rem}
 
-/* Thumbnail-ul din card */
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  object-position: center;
-  background: #fafafa;
-  border-bottom: 1px solid #ddd;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  display: block;
-  transition: opacity 0.3s ease, transform 0.35s ease, box-shadow 0.35s ease;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-}
+    section{
+      max-width:var(--container); margin:0 auto; padding:46px 20px;
+      border-bottom: 1px solid #eee;
+    }
+    h2{
+      margin:0 0 26px; font-size:1.5rem; padding-left:10px;
+      border-left:4px solid #999;
+    }
 
-/* Efect vizual pe imagine */
-.card:hover img {
-  opacity: 0.96;
-  transform: scale(1.01);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
+    /* Grid */
+    .projects{
+      display:grid; gap:26px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
 
-    .links a { display: inline-block; margin-right: 12px; margin-top: 10px; font-size: 0.9rem; color: #111; text-decoration: none; border-bottom: 1px solid #aaa; }
-    .links a:hover { color: #000; border-bottom: 1px solid #000; }
-    footer { text-align: center; padding: 40px 10px; color: #555; font-size: 0.9rem; }
-    footer a { color: #111; text-decoration: none; border-bottom: 1px solid #ccc; }
-    footer a:hover { border-bottom: 1px solid #111; }
+    /* Card */
+    .card{
+      background:#fafafa; border:var(--border); border-radius:var(--radius);
+      overflow:hidden; transition:transform .25s ease, box-shadow .25s ease;
+      box-shadow:0 2px 4px rgba(0,0,0,.04);
+    }
+    .card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
+
+    /* Thumbnail */
+    .thumb{
+      width:100%; height:220px; display:block; border-bottom:var(--border);
+      object-fit:cover; object-position:center 40%; /* default bias a bit up */
+      border-top-left-radius:var(--radius); border-top-right-radius:var(--radius);
+      transition:opacity .3s ease, transform .35s ease;
+      background:#f3f3f3;
+    }
+    .card:hover .thumb{ opacity:.96; transform:scale(1.01); }
+
+    /* Content */
+    .card-content{ padding:18px 20px 22px; }
+    .card-content h3{ margin:0 0 6px; font-size:1.16rem; }
+    .card-content p{ margin:0; color:#444; font-size:.95rem; }
+
+    .links{ margin-top:10px; display:flex; gap:14px; flex-wrap:wrap; }
+    .links a{
+      color:#111; text-decoration:none; font-size:.9rem;
+      border-bottom:1px solid #aaa; padding-bottom:1px;
+    }
+    .links a:hover{ border-bottom:1px solid #000; }
+
+    /* Contact */
+    #contact p{ margin:.25rem 0; }
+
+    /* Small tweak for very narrow screens */
+    @media (max-width:380px){
+      .thumb{ height:190px; object-position:center 35%; }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Andrei-Gabriel Dinu</h1>
-    <p>Junior Web Developer | JavaScript • Node.js • React</p>
+    <p>Junior Web Developer • JavaScript • Node.js • React</p>
   </header>
 
   <section id="projects">
@@ -59,80 +89,73 @@
     <div class="projects">
 
       <div class="card">
-        <img src="img/eventflow-thumb.jpg" alt="EventFlow Thumbnail">
+        <img class="thumb" src="img/eventflow-thumb.jpg" alt="EventFlow Thumbnail" style="object-position:center 28%;">
         <div class="card-content">
           <h3>EventFlow</h3>
           <p>Event planning app using Node.js, Express, EJS, and Bootstrap – includes RESTful routes and form validation.</p>
           <div class="links">
             <a href="https://github.com/AndreiGabriel1/EventFlow" target="_blank">GitHub</a>
             <a href="https://github.com/AndreiGabriel1/EventFlow" target="_blank">Demo / Video</a>
-
           </div>
         </div>
       </div>
 
       <div class="card">
-        <img src="img/buildtrack-thumb.jpg" alt="BuildTrack Thumbnail">
+        <img class="thumb" src="img/buildtrack-thumb.jpg" alt="BuildTrack Thumbnail" style="object-position:center 50%;">
         <div class="card-content">
           <h3>BuildTrack</h3>
           <p>Internal dashboard for tracking construction projects and operations using Node.js and Express.</p>
           <div class="links">
             <a href="https://github.com/AndreiGabriel1/BuildTrack" target="_blank">GitHub</a>
             <a href="https://github.com/AndreiGabriel1/BuildTrack" target="_blank">Demo / Video</a>
-
           </div>
         </div>
       </div>
 
       <div class="card">
-        <img src="img/aframehub-thumb.jpg" alt="AFrameHub Thumbnail">
+        <img class="thumb" src="img/aframehub-thumb.jpg" alt="AFrameHub Thumbnail" style="object-position:center 42%;">
         <div class="card-content">
           <h3>A-FrameHub</h3>
           <p>Full-stack project built with Node.js, Express, and MongoDB for managing A-frame house construction workflows.</p>
           <div class="links">
             <a href="https://github.com/AndreiGabriel1/AFrameHub" target="_blank">GitHub</a>
             <a href="https://github.com/AndreiGabriel1/AFrameHub" target="_blank">Demo / Video</a>
-
           </div>
         </div>
       </div>
 
       <div class="card">
-        <img src="img/jobpilot-thumb.jpg" alt="JobPilot Thumbnail">
+        <img class="thumb" src="img/jobpilot-thumb.jpg" alt="JobPilot Thumbnail" style="object-position:center 32%;">
         <div class="card-content">
           <h3>JobPilot</h3>
           <p>Job tracking and management platform, built with Express backend and planned React client integration.</p>
           <div class="links">
             <a href="https://github.com/AndreiGabriel1/JobPilot" target="_blank">GitHub</a>
             <a href="https://github.com/AndreiGabriel1/JobPilot" target="_blank">Demo / Video</a>
-
           </div>
         </div>
       </div>
 
       <div class="card">
-        <img src="img/qa-thumb.jpg" alt="QA Manual Testing Thumbnail">
+        <img class="thumb" src="img/qa-thumb.jpg" alt="QA Manual Testing Thumbnail" style="object-position:center 50%;">
         <div class="card-content">
           <h3>QA Project (Manual Testing)</h3>
           <p>Portfolio project developed during QA training, showcasing structured test cases, reports, and scenario design.</p>
           <div class="links">
             <a href="https://github.com/AndreiGabriel1/itf_manual_testing_final_project_example_and_portofolio" target="_blank">GitHub</a>
-
             <a href="https://github.com/AndreiGabriel1/itf_manual_testing_final_project_example_and_portofolio" target="_blank">Demo / Report</a>
-
           </div>
         </div>
       </div>
 
       <div class="card">
-        <img src="img/algorithm-thumb.jpg" alt="Algorithm Visualizer Thumbnail">
+        <img class="thumb" src="img/algorithm-thumb.jpg" alt="Algorithm Visualizer Thumbnail" style="object-position:center 30%;">
         <div class="card-content">
           <h3>Algorithm Visualizer</h3>
           <p>Interactive web app that visually demonstrates core JavaScript algorithms and logic structures.</p>
           <div class="links">
             <a href="https://github.com/AndreiGabriel1/AlgorithmVisualizer" target="_blank">GitHub</a>
             <a href="https://andreigabriel1.github.io/AlgorithmVisualizer/" target="_blank">Demo / Video</a>
-
           </div>
         </div>
       </div>
