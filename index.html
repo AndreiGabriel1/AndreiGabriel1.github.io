@@ -2,80 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Andrei-Gabriel Dinu | Portfolio</title>
-<style>
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fff;
-  color: #111;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
+  <meta name="description" content="Portfolio — Andrei-Gabriel Dinu, Junior Web Developer (JavaScript, Node.js, React). Projects, code, and contact." />
+  <meta name="theme-color" content="#ffffff" />
+  <style>
+    :root {
+      --bg: #fff;
+      --fg: #111;
+      --muted: #444;
+      --line: #ddd;
+      --line-soft: #eee;
+      --card: #fafafa;
+      --link: #111;
+      --link-underline: #aaa;
+      --radius: 12px;
+      --shadow: 0 2px 4px rgba(0,0,0,0.04);
+      --shadow-hover: 0 6px 18px rgba(0,0,0,0.08);
+    }
 
-header { text-align: center; padding: 60px 20px 40px; border-bottom: 1px solid #ddd; }
-header h1 { font-size: 2.2rem; letter-spacing: 1px; margin-bottom: 8px; }
-header p { font-size: 1.1rem; color: #444; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      background: var(--bg);
+      color: var(--fg);
+      margin: 0;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+    }
 
-section { max-width: 950px; margin: 0 auto; padding: 50px 20px; border-bottom: 1px solid #eee; }
-h2 { font-size: 1.5rem; border-left: 4px solid #999; padding-left: 10px; margin-bottom: 30px; }
+    header { text-align: center; padding: 60px 20px 40px; border-bottom: 1px solid var(--line); }
+    header h1 { font-size: 2.2rem; letter-spacing: .5px; margin: 0 0 8px; }
+    header p { font-size: 1.08rem; color: var(--muted); margin: 0; }
 
-.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    section { max-width: 950px; margin: 0 auto; padding: 50px 20px; border-bottom: 1px solid var(--line-soft); }
+    h2 { font-size: 1.5rem; border-left: 4px solid #999; padding-left: 10px; margin: 0 0 30px; }
 
-.card {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #fafafa;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-}
-.card:hover { transform: translateY(-6px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
 
-.card img.thumb {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  background: #fafafa;
-  border-bottom: 1px solid #ddd;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  transition: opacity 0.3s ease, transform 0.35s ease, box-shadow 0.35s ease;
-}
-.card:hover img.thumb { opacity: 0.96; transform: scale(1.01); box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card);
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      box-shadow: var(--shadow);
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: #ccc; }
+    .card:focus-within { outline: 2px solid #000; outline-offset: 2px; }
 
-.thumb.eventflow { object-position: center 65%; }
-.thumb.jobpilot  { object-position: center 65%; }
-.thumb.aframehub { object-position: center 50%; }
+    /* Thumbs */
+    .thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: var(--card);
+      border-bottom: 1px solid var(--line);
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
+      transition: opacity .3s ease, transform .35s ease, box-shadow .35s ease;
+    }
+    .card:hover .thumb { opacity: .96; transform: scale(1.01); box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
 
-@media (max-width: 480px) {
-  .thumb.eventflow { object-position: center 52%; }
-  .thumb.jobpilot  { object-position: center 48%; }
-  .thumb.aframehub { object-position: center 38%; }
-}
+    /* Fine-tuned crops */
+    .thumb.eventflow { object-position: center 65%; }
+    .thumb.jobpilot  { object-position: center 65%; }
+    .thumb.aframehub { object-position: center 50%; }
 
-.card-content { padding: 20px; }
-.card-content h3 { margin-top: 0; font-size: 1.2rem; }
-.card-content p { color: #444; font-size: 0.95rem; }
+    @media (max-width: 480px) {
+      .thumb.eventflow { object-position: center 52%; }
+      .thumb.jobpilot  { object-position: center 48%; }
+      .thumb.aframehub { object-position: center 38%; }
+    }
 
-.links a {
-  display: inline-block;
-  margin-right: 12px;
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #111;
-  text-decoration: none;
-  border-bottom: 1px solid #aaa;
-}
-.links a:hover { color: #000; border-bottom: 1px solid #000; }
+    .card-content { padding: 20px; }
+    .card-content h3 { margin: 0 0 6px; font-size: 1.15rem; }
+    .card-content p { color: var(--muted); font-size: .95rem; margin: 0; }
 
-footer { text-align: center; padding: 40px 10px; color: #555; font-size: 0.9rem; }
-footer a { color: #111; text-decoration: none; border-bottom: 1px solid #ccc; }
-footer a:hover { border-bottom: 1px solid #111; }
-</style>
+    .links { margin-top: 10px; }
+    .links a {
+      display: inline-block;
+      margin-right: 12px;
+      font-size: .92rem;
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid var(--link-underline);
+      padding-bottom: 2px;
+      transition: border-color .2s ease, color .2s ease;
+    }
+    .links a:hover,
+    .links a:focus-visible { color: #000; border-bottom-color: #000; outline: none; }
+
+    footer { text-align: center; padding: 40px 10px; color: #555; font-size: .9rem; }
+    footer a { color: var(--link); text-decoration: none; border-bottom: 1px solid #ccc; }
+    footer a:hover { border-bottom: 1px solid #111; }
+  </style>
+
+  <script>
+    // Fallback: dacă o imagine nu se încarcă, pun un placeholder SVG neutru
+    function imgFallback(img) {
+      const title = (img.getAttribute('alt') || 'Thumbnail').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+      const svg = encodeURIComponent(
+        `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675'>
+          <rect width='100%' height='100%' fill='#efefef'/>
+          <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle'
+                font-family='Segoe UI, Roboto, Arial' font-size='28' fill='#777'>${title}</text>
+        </svg>`
+      );
+      img.src = 'data:image/svg+xml;charset=utf-8,' + svg;
+      img.classList.add('thumb'); // păstrăm stilul
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -87,74 +130,119 @@ footer a:hover { border-bottom: 1px solid #111; }
     <h2>Projects</h2>
     <div class="projects">
 
+      <!-- EventFlow — folosim denumirea reală: eventflow-thumb-v5.jpg -->
       <div class="card">
-        <img class="thumb eventflow" src="img/eventflow-thumb.jpg" alt="EventFlow Thumbnail">
+        <img
+          class="thumb eventflow"
+          src="img/eventflow-thumb-v5.jpg?v=3"
+          alt="EventFlow Thumbnail"
+          loading="lazy"
+          decoding="async"
+          onerror="imgFallback(this)"
+        />
         <div class="card-content">
           <h3>EventFlow</h3>
-          <p>Event planning app using Node.js, Express, EJS, and Bootstrap – includes RESTful routes and form validation.</p>
+          <p>Event planning app using Node.js, Express, EJS, and Bootstrap — RESTful routes and form validation.</p>
           <div class="links">
-            <a href="https://github.com/AndreiGabriel1/EventFlow" target="_blank">GitHub</a>
-            <a href="https://github.com/AndreiGabriel1/EventFlow" target="_blank">Demo / Video</a>
+            <a href="https://github.com/AndreiGabriel1/EventFlow" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/AndreiGabriel1/EventFlow" target="_blank" rel="noopener">Demo / Video</a>
           </div>
         </div>
       </div>
 
       <div class="card">
-        <img class="thumb buildtrack" src="img/buildtrack-thumb.jpg" alt="BuildTrack Thumbnail">
+        <img
+          class="thumb buildtrack"
+          src="img/buildtrack-thumb.jpg?v=3"
+          alt="BuildTrack Thumbnail"
+          loading="lazy"
+          decoding="async"
+          onerror="imgFallback(this)"
+        />
         <div class="card-content">
           <h3>BuildTrack</h3>
           <p>Internal dashboard for tracking construction projects and operations using Node.js and Express.</p>
           <div class="links">
-            <a href="https://github.com/AndreiGabriel1/BuildTrack" target="_blank">GitHub</a>
-            <a href="https://github.com/AndreiGabriel1/BuildTrack" target="_blank">Demo / Video</a>
+            <a href="https://github.com/AndreiGabriel1/BuildTrack" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/AndreiGabriel1/BuildTrack" target="_blank" rel="noopener">Demo / Video</a>
           </div>
         </div>
       </div>
 
+      <!-- A-FrameHub — denumirea reală: aframehub-thumb.jpg (fără -v5) -->
       <div class="card">
-        <img class="thumb aframehub" src="img/aframehub-thumb-v5.jpg" alt="AFrameHub Thumbnail">
+        <img
+          class="thumb aframehub"
+          src="img/aframehub-thumb.jpg?v=3"
+          alt="A-FrameHub Thumbnail"
+          loading="lazy"
+          decoding="async"
+          onerror="imgFallback(this)"
+        />
         <div class="card-content">
           <h3>A-FrameHub</h3>
-          <p>Full-stack project built with Node.js, Express, and MongoDB for managing A-frame house construction workflows.</p>
+          <p>Full-stack project built with Node.js, Express, and MongoDB for managing A-frame house workflows.</p>
           <div class="links">
-            <a href="https://github.com/AndreiGabriel1/AFrameHub" target="_blank">GitHub</a>
-            <a href="https://github.com/AndreiGabriel1/AFrameHub" target="_blank">Demo / Video</a>
+            <a href="https://github.com/AndreiGabriel1/AFrameHub" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/AndreiGabriel1/AFrameHub" target="_blank" rel="noopener">Demo / Video</a>
           </div>
         </div>
       </div>
 
+      <!-- JobPilot — denumirea reală: jobpilot-thumb-v5.jpg -->
       <div class="card">
-        <img class="thumb jobpilot" src="img/jobpilot-thumb-v5.jpg" alt="JobPilot Thumbnail">
+        <img
+          class="thumb jobpilot"
+          src="img/jobpilot-thumb-v5.jpg?v=3"
+          alt="JobPilot Thumbnail"
+          loading="lazy"
+          decoding="async"
+          onerror="imgFallback(this)"
+        />
         <div class="card-content">
           <h3>JobPilot</h3>
-          <p>Job tracking and management platform, built with Express backend and planned React client integration.</p>
+          <p>Job tracking and management platform, Express backend with planned React client integration.</p>
           <div class="links">
-            <a href="https://github.com/AndreiGabriel1/JobPilot" target="_blank">GitHub</a>
-            <a href="https://github.com/AndreiGabriel1/JobPilot" target="_blank">Demo / Video</a>
+            <a href="https://github.com/AndreiGabriel1/JobPilot" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/AndreiGabriel1/JobPilot" target="_blank" rel="noopener">Demo / Video</a>
           </div>
         </div>
       </div>
 
       <div class="card">
-        <img class="thumb qa" src="img/qa-thumb.jpg" alt="QA Manual Testing Thumbnail">
+        <img
+          class="thumb qa"
+          src="img/qa-thumb.jpg?v=3"
+          alt="QA Manual Testing Thumbnail"
+          loading="lazy"
+          decoding="async"
+          onerror="imgFallback(this)"
+        />
         <div class="card-content">
           <h3>QA Project (Manual Testing)</h3>
-          <p>Portfolio project developed during QA training, showcasing structured test cases, reports, and scenario design.</p>
+          <p>Portfolio project from QA training, with structured test cases, reports, and scenario design.</p>
           <div class="links">
-            <a href="https://github.com/AndreiGabriel1/itf_manual_testing_final_project_example_and_portofolio" target="_blank">GitHub</a>
-            <a href="https://github.com/AndreiGabriel1/itf_manual_testing_final_project_example_and_portofolio" target="_blank">Demo / Report</a>
+            <a href="https://github.com/AndreiGabriel1/itf_manual_testing_final_project_example_and_portofolio" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/AndreiGabriel1/itf_manual_testing_final_project_example_and_portofolio" target="_blank" rel="noopener">Demo / Report</a>
           </div>
         </div>
       </div>
 
       <div class="card">
-        <img class="thumb algorithm" src="img/algorithm-thumb.jpg" alt="Algorithm Visualizer Thumbnail">
+        <img
+          class="thumb algorithm"
+          src="img/algorithm-thumb.jpg?v=3"
+          alt="Algorithm Visualizer Thumbnail"
+          loading="lazy"
+          decoding="async"
+          onerror="imgFallback(this)"
+        />
         <div class="card-content">
           <h3>Algorithm Visualizer</h3>
-          <p>Interactive web app that visually demonstrates core JavaScript algorithms and logic structures.</p>
+          <p>Interactive web app demonstrating core JavaScript algorithms and logic structures.</p>
           <div class="links">
-            <a href="https://github.com/AndreiGabriel1/AlgorithmVisualizer" target="_blank">GitHub</a>
-            <a href="https://andreigabriel1.github.io/AlgorithmVisualizer/" target="_blank">Demo / Video</a>
+            <a href="https://github.com/AndreiGabriel1/AlgorithmVisualizer" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://andreigabriel1.github.io/AlgorithmVisualizer/" target="_blank" rel="noopener">Live Demo</a>
           </div>
         </div>
       </div>
@@ -165,8 +253,8 @@ footer a:hover { border-bottom: 1px solid #111; }
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:andrei.dinu.dev@gmail.com">andrei.dinu.dev@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/andrei-gabriel-dinu-173240251/" target="_blank">linkedin.com/in/andrei-gabriel-dinu</a></p>
-    <p>GitHub: <a href="https://github.com/AndreiGabriel1" target="_blank">github.com/AndreiGabriel1</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/andrei-gabriel-dinu-173240251/" target="_blank" rel="noopener">linkedin.com/in/andrei-gabriel-dinu</a></p>
+    <p>GitHub: <a href="https://github.com/AndreiGabriel1" target="_blank" rel="noopener">github.com/AndreiGabriel1</a></p>
   </section>
 
   <footer>
